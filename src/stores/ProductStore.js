@@ -7,6 +7,7 @@ export default class ProductStore {
   constructor () {
     this.basket = []
     this.products = []
+    this.onChanges = []
     /* SEED */
     this.products.push({
       id: 1,
@@ -45,6 +46,14 @@ export default class ProductStore {
     this.basket = [...this.basket, product]
     //retire 1 du stock
     this.products = this.products.map(p => p === product ? {...p, stock: p.stock - 1} : p)
+    this.inform()
   }
 
+  subscribe (cb) {
+    this.onChanges.push(cb)
+  }
+
+  inform () {
+    this.onChanges.forEach((cb) => cb(this))
+  }
 }
