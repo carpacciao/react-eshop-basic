@@ -19,7 +19,7 @@ export default class ProductItem extends React.Component {
                 <strong>( {this.props.product.stock} ) en stock</strong>
                 </div>
               </div>
-              <button className="btn btn-primary">Ajouter au panier</button>
+              <button className="btn btn-primary" onClick={() => this.props.store.addToBasket(this.props.product)}>Ajouter au panier</button>
             </div>
           </div>
         </div>
