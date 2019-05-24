@@ -5,7 +5,8 @@ export default class ProductItem extends React.Component {
     super(props)
   }
   render () {
-    return (
+    if(this.props.product.stock > 0){
+      return (
         <div className="col-4 mt-3">
           <div className="card">
             <img src={this.props.product.image} className="card-img-top" alt="something" style={{ maxHeight: '300px' }} />
@@ -23,6 +24,10 @@ export default class ProductItem extends React.Component {
             </div>
           </div>
         </div>
+      )
+    }
+    return (
+      <div></div>
     )
   }
 }
