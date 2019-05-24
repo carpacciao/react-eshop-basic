@@ -12,7 +12,7 @@ export default class ShopList extends React.Component {
         {
           this.props.store.products.map((product) => {
             return (
-              <ProductItem product={product} />
+              <ProductItem product={product} key={product.id} />
             )
           })
         }
