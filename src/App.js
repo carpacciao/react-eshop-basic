@@ -12,8 +12,8 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <Navigation />
-        <ShopList />
+        <Navigation store={this.store} />
+        <ShopList store={this.store} />
       </div>
     )
   }
