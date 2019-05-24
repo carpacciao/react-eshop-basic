@@ -9,9 +9,13 @@ export default class ShopList extends React.Component {
     return (
       <div className="container mt-5">
         <div className="row">
-
-          <ProductItem />
-
+        {
+          this.props.store.products.map((product) => {
+            return (
+              <ProductItem />
+            )
+          })
+        }
         </div>
       </div>
     )
