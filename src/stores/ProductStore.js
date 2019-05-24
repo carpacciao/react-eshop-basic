@@ -45,7 +45,6 @@ export default class ProductStore {
     this.basket = [...this.basket, product]
     //retire 1 du stock
     this.products = this.products.map(p => p === product ? {...p, stock: p.stock - 1} : p)
-    console.log(this)
   }
 
 }
